@@ -1,0 +1,90 @@
+
+h1 {
+    color: white;
+
+}
+
+body {
+    background-image: url("../images/dust_scratches.png");
+   
+ }
+
+ #container {
+
+    width: 960px;
+    margin: 0px auto;
+ }
+
+
+.main {
+
+
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 20px;
+    background-color: #ffffff;
+    background-image: url("../images/psychic-background-1.png");
+    width: 700px;
+    margin: 100px;
+    height: 800px;
+    }
+    
+h1 {
+    text-align: center;
+}
+
+button {
+
+    margin-left: 275px;
+    
+}
+
+.Wins {
+
+    display: block;
+    width: 165px;
+    height: 100px;
+    padding: 5px;
+    margin-left: 250px;
+    border: 3px solid gray;    
+    text-align: center;
+    color: white;
+
+}
+
+.guesses {
+
+    display: block;
+    width: 375px;
+    height: 100px;
+    padding: 5px;
+    margin-left: 150px;
+    border: 3px solid gray;    
+    text-align: center;
+    color: white;
+
+}
+
+.guessesRemaining {
+
+    display: block;
+    width: 165px;
+    height: 100px;
+    padding: 5px;
+    margin-left: 250px;
+    border: 3px solid gray;    
+    text-align: center;
+    color: white;
+}
+
+.lettersGuessed {
+
+    display: block;
+    width: 375px;
+    height: 150px;
+    padding: 5px;
+    margin-left: 150px;
+    border: 3px solid gray;    
+    text-align: center;
+    color: white;
+
+}
