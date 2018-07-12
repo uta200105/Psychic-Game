@@ -23,29 +23,36 @@
     <div class="main">
         <br>
 
+    <!-- Game Title -->
     <h1>Psychic-Game</h1>
+    <h4>Type the letter I'm thinking of</h4>
         <br>
 
-<button onclick="startGame" type="button" id="button" class="btn btn-secondary">Press to Start</button>
+    <!-- Start Buttton - Didn't need this 
+<button type="button" id="button" class="btn btn-secondary">Press to Start</button>-->
         <br>
         <br>
-<span class="Wins">Wins</span> 
+
+    <!-- Number of wins displayed here -->
+<span class="wins">Wins</span> 
          <br>
          <br>
-<div class="guesses">
-    Progress
-</div>
+
+    <!-- Correct letters guessed -->
+<div class="losses">
+    Losses</div>
         <br>
         <br>
+
+    <!-- Number of Remaining Guesses -->
 <div class="guessesRemaining">Number of Guesses Remaining</div>
         <br>
-<div class="lettersGuessed">Letters Guessed
 
-</div>
+    <!-- Incorrect Guesses -->
+        <div id="lettersGuessed">Letters Guessed</div>
         <br>
 
-<p> </p>
-
+    <!-- Javascript JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous">
 </script>
 <script src ="./assets/javascript/game.js">

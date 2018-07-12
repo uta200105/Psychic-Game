@@ -1,6 +1,13 @@
 
 h1 {
     color: white;
+    text-align: center;
+
+}
+
+h4 {
+    color: white;
+    text-align: center;
 
 }
 
@@ -27,10 +34,6 @@ body {
     margin: 100px;
     height: 800px;
     }
-    
-h1 {
-    text-align: center;
-}
 
 button {
 
@@ -38,7 +41,7 @@ button {
     
 }
 
-.Wins {
+.wins {
 
     display: block;
     width: 165px;
@@ -51,13 +54,13 @@ button {
 
 }
 
-.guesses {
+.losses {
 
     display: block;
-    width: 375px;
+    width: 165px;
     height: 100px;
     padding: 5px;
-    margin-left: 150px;
+    margin-left: 250px;
     border: 3px solid gray;    
     text-align: center;
     color: white;
@@ -76,7 +79,7 @@ button {
     color: white;
 }
 
-.lettersGuessed {
+#lettersGuessed {
 
     display: block;
     width: 375px;

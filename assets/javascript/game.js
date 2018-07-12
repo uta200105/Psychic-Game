@@ -1,78 +1,55 @@
-$(document).ready(function()
-{
-$(document).startGame(function()
-{ 
-        
-    // Array of Words
+$(document).ready(function () {
+    // Start Game
 
-    var word = ["space", "travel", "star", "planet"];
-    
-    //Variables
-    
-    var correct = [];
-    var incorrect = [];
-    var underScoreA = []
-    var underScoreDefault = document.getElementsByClassName("guesses");
-    var wrongGuesses = document.getElementsByClassName("lettersGuessed");
-    var winCount = 0;
+    // Select Rand Letter and Hide it
+    var Win = 0;
+    var loss = 0;
+    var lifes = 10;
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var starter = [Math.floor(Math.random() * letters.length)];
+    var chosenLetter = letters[starter];
+    console.log("Choose letter" + chosenLetter);
+    var lettersguessed = [];
 
-    // Choose random words
-
-    var randomWord = [Math.floor(Math.random() * word.length)];
-    var chosenWord = word[randomWord];
-   
-
-    // Underscores
-
-    var underscores = () =>
-    {
-        for (var i = 0; i < chosenWord.length; i++)
-    {
-    underScoreA.push("_");
+    // store letters guessed and reset game once won or loss;
+    function newGame() {
+        lifes = 10;
+        $(".guessesRemaining").html("GuessesLeft  : " + lifes);
+        lettersguessed = [];
+        $("#lettersGuessed").html("Letters Guessed  : " + lettersguessed);
+        starter = [Math.floor(Math.random() * letters.length)];
+        chosenLetter = letters[starter];
+        console.log("Choose letter" + chosenLetter);
     }
-    underScoreDefault[0].innerHTML = underScoreA.join("");
+    // Either add to losses or deduct from lives on keyup
+    document.onkeyup = function (event) {
+        if (lifes == 0) {
+            loss++;
+            $(".losses").html("Losses  : " + loss);
+            newGame();
+        } else {
+            lifes--;
+            // Display Guesses
+            $(".guessesRemaining").html("GuessesLeft  : " + lifes);
+        }
+        // Only want letters to display. Used "letters" array, which has all caps so used "indexOf" so 
+        // system would recognize lower and upper letters pressed
+        var guessletter = event.key;
+        if (letters.indexOf(guessletter.toUpperCase()) < 0) {
+            return;
+        }
+        // when correct letter is guessed add to wins and restart
+        if (guessletter.toUpperCase() == chosenLetter) {
 
-    return underScoreA;
-    }
-   
+            Win++;
+            $(".wins").html("Wins  : " + Win);
+            newGame();
 
-    // Users Guess
-
-    document.addEventListener ("keypress", event =>
-    {
-    var keyCode = event.keyCode;
-    var codeWord = String.fromCharCode(keyCode);
-   
-
-    // Confirm Correct Guess
-
-    // If Right
-
-    if(chosenWord.indexOf(codeWord) > -1)
-    {
-    correct.push(codeWord);
-
-    // Replace underscore with correct letter
-
-    underScoreA[chosenWord.indexOf(codeWord)] = codeWord
-
-    if(underScoreA.join("")== chosenWord)
-    {
-    winCount++;
-    alert("You Win!");
+        }
+        lettersguessed.push(guessletter)
+        //console.log(lettersguessed)
+        // Display all letters typed
+        $("#lettersGuessed").html("Letters Guessed  : " + lettersguessed);
     }
 
-    document.getElementsByClassName("Wins").innerHTML = winCount;
-
-    // If Wrong
-
-    }
-    else 
-    {
-    incorrect.push(codeWord);
-    }
-
-});
-
-});
 });
